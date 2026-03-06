@@ -21,6 +21,10 @@ type Training struct {
 
 func (t *Training) Parse(datastring string) (err error) {
 	// TODO: реализовать функцию
+	if datastring == "" {
+		return fmt.Errorf("empty datastring")
+	}
+
 	s := strings.Split(datastring, ",")
 	if len(s) != 3 {
 		return fmt.Errorf("incorrect datastring")
@@ -30,6 +34,9 @@ func (t *Training) Parse(datastring string) (err error) {
 	if err != nil {
 		return err
 	}
+	if steps <= 0 {
+		return fmt.Errorf("incorrect steps count")
+	}
 	t.Steps = steps
 
 	t.TrainingType = s[1]
@@ -37,6 +44,9 @@ func (t *Training) Parse(datastring string) (err error) {
 	tm, err := time.ParseDuration(s[2])
 	if err != nil {
 		return err
+	}
+	if tm <= 0 {
+		return fmt.Errorf("incorrect duration")
 	}
 	t.Duration = tm
 

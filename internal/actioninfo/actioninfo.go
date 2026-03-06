@@ -1,7 +1,6 @@
 package actioninfo
 
 import (
-	//"fmt"
 	"log"
 )
 
@@ -31,5 +30,4 @@ func Info(dataset []string, dp DataParser) {
 		results = append(results, info)
 	}
 
-	//fmt.Println(results)
 }
