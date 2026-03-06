@@ -25,22 +25,22 @@ func WalkingSpentCalories(steps int, weight, height float64, duration time.Durat
 
 func RunningSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
 	// TODO: реализовать функцию
-	if steps < 0 {
+	if steps <= 0 {
 		err := errors.New("steps count can not be less then 0")
 		log.Println(err)
 		return 0, err
 	}
-	if weight < 0 {
+	if weight <= 0 {
 		err := errors.New("weight can not be less then 0")
 		log.Println(err)
 		return 0, err
 	}
-	if height < 0 {
+	if height <= 0 {
 		err := errors.New("height can not be less then 0")
 		log.Println(err)
 		return 0, err
 	}
-	if duration < 0 {
+	if duration <= 0 {
 		err := errors.New("duration can not be less then 0")
 		log.Println(err)
 		return 0, err

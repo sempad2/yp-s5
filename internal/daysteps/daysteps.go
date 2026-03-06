@@ -19,6 +19,10 @@ type DaySteps struct {
 
 func (ds *DaySteps) Parse(datastring string) (err error) {
 	// TODO: реализовать функцию
+	if datastring == "" {
+		return fmt.Errorf("empty datastring")
+	}
+
 	s := strings.Split(datastring, ",")
 	if len(s) != 2 {
 		return fmt.Errorf("incorrect datastring")
