@@ -52,7 +52,7 @@ func RunningSpentCalories(steps int, weight, height float64, duration time.Durat
 
 func MeanSpeed(steps int, height float64, duration time.Duration) float64 {
 	// TODO: реализовать функцию
-	if steps < 0 || duration < 0 {
+	if steps <= 0 || duration <= 0 {
 		return 0
 	}
 	return Distance(steps, height) / duration.Hours()
