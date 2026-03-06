@@ -32,11 +32,17 @@ func (ds *DaySteps) Parse(datastring string) (err error) {
 	if err != nil {
 		return err
 	}
+	if steps <= 0 {
+		return fmt.Errorf("incorrect steps count")
+	}
 	ds.Steps = steps
 
 	tm, err := time.ParseDuration(s[1])
 	if err != nil {
 		return err
+	}
+	if tm <= 0 {
+		return fmt.Errorf("incorrect duration")
 	}
 	ds.Duration = tm
 
